@@ -19,3 +19,94 @@ textarea {
         padding: 0;
     }
 }
+
+
+/* Basic reset for consistency across browsers */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Body styling */
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4; /* Light background for contrast */
+}
+/* Header styling */
+header {
+background-color: #001f3f; /* Dark blue header */
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+/* Logo image inside the header */
+header img {
+max-width: 150px;
+height: auto; /* Responsive image */
+}
+/* Movie listing container */
+.movie-list {
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* 4 columns */
+gap: 20px; /* Space between movie banners */
+padding: 20px;
+}
+/* Individual movie banner styling */
+.movie-banner {
+background-color: #fff; /* White background for banners */
+border-radius: 8px; /* Rounded corners */
+overflow: hidden; /* Prevents overflow from children */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+transition: transform 0.3s; /* Animation on hover */
+}
+/* Image inside movie banner */
+.movie-banner img {
+width: 100%; /* Full width of the banner */
+height: auto; /* Maintain aspect ratio */
+}
+/* Banner hover effect */
+.movie-banner:hover {
+transform: scale(1.05); /* Slight zoom effect on hover */
+}
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+.movie-list {
+grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+}
+}
+
+@media (max-width: 480px) {
+    .movie-list {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+
+    header img {
+        max-width: 120px; /* Smaller logo on mobile */
+    }
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-button {
+    width: 100px;
+    padding: 10px;
+    background-color: #001f3f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
