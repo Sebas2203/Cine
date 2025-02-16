@@ -54,7 +54,10 @@ namespace Cine
 
                         using (var writer = new StreamWriter(ruta))
                         {
-                            serializer.Serialize(writer, usuario);
+                            serializer.Serialize(writer, users);
+                            mensajeTexto.InnerText = "Su usuario se ha registrado.";
+                            System.Threading.Thread.Sleep(3000);
+                            Response.Redirect("Login.aspx");
                         }
                     }
                     else //agrega usuarios al archivo si el archivo existe

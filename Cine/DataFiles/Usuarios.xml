@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <User>
+    <username>admin@uh.ac.cr</username>
+    <password>admin</password>
+  </User>
+  <User>
+    <username>edwin@uh.ac.cr</username>
+    <password>123</password>
+  </User>
+</ArrayOfUser>
