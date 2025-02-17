@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Cine
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Template : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -5,22 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login</title>
-        <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
     <script src="Scripts/General.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <header>
-            <div class="logo">
-                <img src="Content/Media/LogoCine.png" alt="Logositio"/>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="Home.aspx" runat="server">Home</a></li>
-               
-                </ul>
-            </nav>
-        </header>
         <div class="login-container">
             <h2>Inicio de Sesión</h2>
             <br />
