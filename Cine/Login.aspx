@@ -10,20 +10,36 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <header>
+            <div class="logo">
+                <img src="Content/Media/LogoCine.png" alt="Logositio" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Home.aspx" runat="server">Home</a></li>
+                    <li><a href="Login.aspx" runat="server">Login</a></li>
+                    <li><a href="a.aspx" runat="server">a</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
         <div class="login-container">
             <h2>Inicio de Sesión</h2>
             <br />
             <asp:TextBox ID="txtUsername" placeholder="Correo Electónico" runat="server" />
-            <br/>
-            <asp:RegularExpressionValidator 
-                 ID="EmailValidator" runat="server" ControlToValidate="txtUsername" ErrorMessage="Por favor ingrese un correo válido." ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" ForeColor="Red">
+            <br />
+            <asp:RegularExpressionValidator
+                ID="EmailValidator" runat="server" ControlToValidate="txtUsername" ErrorMessage="Por favor ingrese un correo válido." ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" ForeColor="Red">
             </asp:RegularExpressionValidator>
 
             <br />
             <asp:TextBox ID="txtPassword" placeholder="Contraseña" runat="server" TextMode="Password" />
-            <br /><br />
+            <br />
+            <br />
             <asp:Button ID="btnLogin" CssClass="login-button" runat="server" Text="Login" OnClick="btnLogin_Click" />
-            <br/>
+            <br />
             <a>¿No tiene cuenta?</a>
             <a href="register.aspx" runat="server">Registrar</a>
         </div>
@@ -31,7 +47,7 @@
         </div>
     </form>
 
-        <div class="dialog-container" id="divMensaje" style="display: none;" runat="server">
+    <div class="dialog-container" id="divMensaje" style="display: none;" runat="server">
         <div class="message-box">
             <div id="mensajeContenido">
                 <span id="mensajeTexto" runat="server"></span>
