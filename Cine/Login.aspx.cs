@@ -17,7 +17,7 @@ namespace Cine
             {
                 mensajeTexto.InnerText = "Su sesión ya fue iniciada. Redireccionando a la cartelera.";
                 System.Threading.Thread.Sleep(3000);
-                Response.Redirect("Home.aspx");
+                Response.Redirect("HomePage.aspx");
             }
         }
 
@@ -53,7 +53,7 @@ namespace Cine
                     if (existingUser.password == usuario.password) // Successful login
                     {
                         Session["UserLogin"] = existingUser; // Set user session
-                        Response.Redirect("Home.aspx"); // Redirect to home page
+                        Response.Redirect("HomePage.aspx"); // Redirect to home page
                     }
                     else
                     {
