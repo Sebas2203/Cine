@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.master.cs" Inherits="Cine.Template" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <header>
+                <div class="logo">
+                    <img src="Content/Media/LogoCine.png" alt="Logositio" />
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="Home.aspx" runat="server">Home</a></li>
+                        <li><a href="Login.aspx" runat="server">Login</a></li>
+                        <li><a href="a.aspx" runat="server">a</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
