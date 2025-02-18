@@ -1,0 +1,48 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background-color: #24252A;
+}
+
+li, a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: #edf0f1;
+    text-decoration: none;
+    background-color: transparent; /* Asegura que no haya fondo en los enlaces */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #181a1f;
+}
+
+.logo {
+    width: 45px;
+    cursor: pointer;
+}
+
+.nav-links li {
+    display: inline;
+    padding: 0 20px;
+}
+
+    .nav-links li a {
+        transition: all 0.3s ease 0s;
+        background-color: transparent; /* Elimina el fondo del enlace */
+    }
+
+        .nav-links li a:hover {
+            color: #0088a9;
+        }
