@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Cine.Register1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Cine.Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -17,11 +17,8 @@
         <asp:TextBox ID="txtPassword" placeholder="Contraseña" runat="server" TextMode="Password" />
         <br />
         <br />
-        <%-- <asp:Button ID="btnRegistrar" CssClass="login-button" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" /> --%>
+        <asp:Button ID="btnRegistrar" CssClass="login-button" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" />
     </div>
-    <div>
-    </div>
-    </form>
 
  <div class="dialog-container" id="divMensaje" style="display: none;" runat="server">
      <div class="message-box">
