@@ -8,13 +8,14 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <!-- <link href="Content/Site.css" rel="stylesheet" /> -->
-    <link href="content\css\template\mainTemplate.css" rel="stylesheet" />
+    <link href="content\css\template\mainTemplate.css" rel="stylesheet" /> 
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
 
-            <header>
+
+           <header>
                 <a href="/HomePage.aspx" runat="server"><img src="content\media\filmWhite.png" alt="WhiteLogo" class="logo" /></a>
                 <nav>
                     <ul class="nav-links">
@@ -23,7 +24,7 @@
                         <li><a href="/Register.aspx" runat="server">Register</a></li>
                     </ul>
                 </nav>
-            </header>
+            </header> 
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
