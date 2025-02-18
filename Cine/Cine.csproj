@@ -123,6 +123,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\css\template\mainTemplate.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Factura.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="HomePage.aspx" />
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
