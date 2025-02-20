@@ -117,9 +117,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\template\StyleHomePage.css" />
+    <Content Include="Content\Media\dune.jpg" />
     <Content Include="Content\Media\filmBlack.png" />
     <Content Include="Content\Media\filmWhite.png" />
-    <Content Include="Content\Media\LogoCine.png" />
+    <Content Include="Content\Media\starwars.jpg" />
+    <Content Include="Content\Media\tokyo.jpg" />
+    <Content Include="Content\Media\tumba.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\css\template\mainTemplate.css" />
     <Content Include="Default.aspx" />
@@ -162,6 +166,7 @@
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\js\MainHomePage.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
