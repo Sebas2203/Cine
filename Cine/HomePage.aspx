@@ -36,8 +36,6 @@
 
     </div>
 
-
-
     <%-- Content --%>
     <%-- Movies Thumbs --%>
 </asp:Content>
