@@ -4,26 +4,38 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-
-
-
-
-
-
-
-
-
-
-    <%-- < div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>¡Bienvenido a Cine!</h1>
-                <p>¡Disfruta de las mejores películas en la comodidad de tu hogar!</p>
+    <%-- Banner --%>
+    <div class="banner">
+        <%-- Swiper --%>
+        <div class="swiper bannerSwiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="content\media\dune.jpg" alt="dune"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="content\media\tokyo.jpg" alt="Tokyo Drift"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="content\media\starwars.jpg" alt="Star Wars"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="content\media\tumba.jpg" alt="La tumba de las Lurciernagas"/>
+                </div>
+                ...
             </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
         </div>
-    </div> --%>
 
+    </div>
 
-
+    <%-- Content --%>
+    <%-- Movies Thumbs --%>
 </asp:Content>
