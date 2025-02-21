@@ -119,6 +119,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\css\template\StyleHomePage.css" />
     <Content Include="Content\Media\banner-dune.jpg" />
+    <Content Include="Content\Media\banner-god.jpg" />
     <Content Include="Content\Media\banner-starwars.jpg" />
     <Content Include="Content\Media\banner-tokyo.jpg" />
     <Content Include="Content\Media\banner-tumba.jpg" />
@@ -126,6 +127,7 @@
     <Content Include="Content\Media\filmBlack.png" />
     <Content Include="Content\Media\filmWhite.png" />
     <Content Include="Content\Media\starwars.jpg" />
+    <Content Include="Content\Media\thegodfather.jpg" />
     <Content Include="Content\Media\tokyo.jpg" />
     <Content Include="Content\Media\tumba.jpg" />
     <Content Include="Content\Site.css" />

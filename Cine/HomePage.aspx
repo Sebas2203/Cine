@@ -23,6 +23,9 @@
                 <div class="swiper-slide">
                     <img src="content\media\tumba.jpg" alt="La tumba de las Lurciernagas" />
                 </div>
+                <div class="swiper-slide">
+                    <img src="content\media\thegodfather.jpg" alt="The GodFather" />
+                </div>
                 ...
             </div>
         </div>
@@ -32,18 +35,13 @@
     <div class="content">
         <div class="title">
             <div id="title">
-                <h1>Movie Name</h1>
+                <h1>Dune</h1>
             </div>
             <div id="sub-title">
-                <p>Sub title</p>
+                <p>Ciencia Ficción/Aventura/Drama</p>
             </div>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
-            </div>
-            <div class="button">
-                <button>
-                    Trailer
-                </button>
             </div>
         </div>
         <div class="desc">
@@ -53,7 +51,7 @@
                 <div class="swiper-button-next"></div>
             </div>
             <div id="desc">
-                <p>Descripcion pelicula</p>
+                <p>Dune (2021) es una película de ciencia ficción dirigida por Denis Villeneuve, basada en la novela homónima de Frank Herbert. La historia sigue a Paul Atreides, un joven noble con un destino grandioso, cuya familia es enviada al peligroso planeta Arrakis para administrar la extracción de la especia melange, el recurso más valioso del universo. Sin embargo, una traición mortal obliga a Paul y a su madre a refugiarse entre los Fremen, los habitantes del desierto, donde deberá enfrentar su destino y descubrir su verdadero poder</p>
             </div>
             <asp:Button ID="Button1" runat="server" Text="Comprar Entrada" class="btn-primary" />
         </div>
@@ -76,6 +74,9 @@
                 </div>
                 <div class="swiper-slide">
                     <img src="content\media\banner-tumba.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="content\media\banner-god.jpg" />
                 </div>
             </div>
         </div>
