@@ -9,6 +9,7 @@
     </asp:ContentPlaceHolder>
     <!-- CSS file -->
     <link href="content\css\template\StyleHomePage.css" rel="stylesheet" />
+    <link href="content\css\template\LoginRegister.css" rel="stylesheet" />
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-R7tuD9W1lAXTwp53orj6UNLl1C9G1MZ5/wC9U1w6UoXGzUw0U7vve2HvI9B/2B3E" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Swiper CSS -->

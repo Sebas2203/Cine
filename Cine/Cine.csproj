@@ -130,7 +130,7 @@
     <Content Include="Content\Media\thegodfather.jpg" />
     <Content Include="Content\Media\tokyo.jpg" />
     <Content Include="Content\Media\tumba.jpg" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\template\LoginRegister.css" />
     <Content Include="Content\css\template\mainTemplate.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />

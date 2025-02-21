@@ -40,9 +40,6 @@
             <div id="sub-title">
                 <p>Ciencia Ficción/Aventura/Drama</p>
             </div>
-            <div class="rating">
-                <i class="fa-solid fa-star"></i>
-            </div>
         </div>
         <div class="desc">
             <!-- Swiper navigation buttons -->
