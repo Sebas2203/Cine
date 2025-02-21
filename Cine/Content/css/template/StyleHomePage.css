@@ -41,6 +41,7 @@ header {
     justify-content: space-between;
     padding: 7px 40px;
     z-index: 1000;
+/*    background-color: black;*/
 }
 
 nav ul {
@@ -97,3 +98,179 @@ a:hover {
         height: 100%;
         object-fit: cover;
     }
+
+/*content*/
+
+.content{
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 66px 40px;
+    position: relative;
+}
+
+.content >*{
+    width: 50%;
+    position: relative;
+    height: 100%;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+#sub-title p{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.rating{
+    margin: 50px 0;
+    font-size: 12px;
+}
+
+.navigation-btn{
+    display: flex;
+    gap: 25px;
+}
+
+/*swiper buttons*/
+.swiper-button-prev,
+.swiper-button-next{
+    position: relative !important;
+    color: white !important;
+    height: 20px !important;
+    width: 20px !important;
+    margin: 0 !important;
+    right: unset !important;
+    left: unset !important;
+    top: unset !important;
+}
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+        color: var(--primary-color) !important;
+    }
+
+/*cambiar iconos*/
+
+.swiper-button-next:after{
+    content: "->" !important;
+}
+
+    .swiper-button-prev:after {
+        content: "<-" !important;
+    }
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-family: 'FiraCode Nerd Font Mono' !important;
+        font-weight: 600 !important;
+        font-size: 16px !important;
+        letter-spacing: 0;
+        font-variant: initial;
+        line-height: 1;
+    }
+
+/*swiper pagination*/
+.swiper-pagination{
+    height: 20px !important;
+    bottom: 120px !important;
+    width: 100%;
+}
+
+.swiper-pagination-bullet{
+    width: 50px !important;
+    background-color: white !important;
+    place-content .6;
+    height: 3px !important;
+    border-radius: 10px !important;
+    margin: 0 3px !important;
+}
+
+.desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    text-align: justify;
+}
+
+#desc{
+    font-size: 15px;
+    max-width: 300px;
+    line-height: 1.3;
+    margin: 40px 0;
+}
+
+/*buttons*/
+button{
+    font-family: "Lato";
+    background: transparent;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px !important;
+    cursor: pointer;
+    transform: all .3s;
+}
+
+button >*{
+    margin-right: 10px;
+}
+
+.btn-primary{
+    background-image: linear-gradient(to lefr,
+    var(--primary-color), var(--secondary-color);
+    padding: 13px 45px;
+    transition: all .7s;
+}
+
+    .btn-primary:hover {
+/*        scale: 1,1;*/
+        background-image: none;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color)
+    }
+
+/*thumbs*/
+.thumbsSwiper{
+    box-sizing: border-box;
+    padding: 10px 0;
+    max-width: 90%;
+    overflow-y: unset !important;
+    align-items: center;
+}
+
+    .thumbsSwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 1;
+        cursor: pointer;
+        padding: 0 10px;
+        background-color: transparent;
+        border-radius: 20px;
+    }
+
+    .thumbsSwiper .swiper-slide {
+        border-radius: 15px;
+        transition: transform .7s;
+    }
+
+        .thumbsSwiper .swiper-slide img {
+            border-radius: 15px;
+        }
+
+        .thumbsSwiper .swiper-slide:hover {
+            transform: translateY(-26%);
+        }
