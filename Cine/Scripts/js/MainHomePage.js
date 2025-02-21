@@ -24,6 +24,28 @@ var title = {
 };
 
 //swiper
+//crear los thumbs swiper
+var thumbsSwiper = new Swiper(".thumbsSwiper", {
+    spaceBetween: 10,
+    slidesPervView: 5,
+    breakpoints: {
+        200: {
+            slidesPerView: 1.5
+        },
+        400: {
+            slidesPerView: 1.5
+        },
+        600: {
+            slidesPerView: 3
+        },
+        1100: {
+            slidesPerView: 5
+        },
+    },
+    freeMode: true,
+    watchSlideProgress: true,
+})
+
 const swiper = new Swiper('.bannerSwiper', {
     spaceBetween: 0,
     effect: 'fade',
@@ -39,4 +61,9 @@ const swiper = new Swiper('.bannerSwiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+
+    // hacer tumbs slider funcione como thumbs para los banners
+    thumbs: {
+        swiper: thumbsSwiper
+    }
 });
