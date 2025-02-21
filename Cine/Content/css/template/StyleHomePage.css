@@ -188,10 +188,10 @@ a:hover {
     width: 100%;
 }
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
     width: 50px !important;
     background-color: white !important;
-    place-content .6;
+    place-content: space-between;
     height: 3px !important;
     border-radius: 10px !important;
     margin: 0 3px !important;
@@ -213,8 +213,8 @@ a:hover {
 }
 
 /*buttons*/
-button{
-    font-family: "Lato";
+button {
+    font-family: Arial;
     background: transparent;
     border-radius: 25px;
     border: none;
@@ -222,7 +222,7 @@ button{
     text-transform: uppercase;
     font-size: 12px !important;
     cursor: pointer;
-    transform: all .3s;
+    transition: transform 0.3s;
 }
 
 button >*{
@@ -231,25 +231,27 @@ button >*{
 
 .btn-primary{
     background-image: linear-gradient(to lefr,
-    var(--primary-color), var(--secondary-color);
+    var(--primary-color), var(--secondary-color));
     padding: 13px 45px;
     transition: all .7s;
 }
 
     .btn-primary:hover {
-/*        scale: 1,1;*/
+        transform: scale(1.1);
         background-image: none;
         border: 2px solid var(--primary-color);
         color: var(--primary-color)
     }
 
 /*thumbs*/
-.thumbsSwiper{
+
+.thumbsSwiper {
     box-sizing: border-box;
-    padding: 10px 0;
-    max-width: 90%;
-    overflow-y: unset !important;
-    align-items: center;
+    padding: 50px 0 70px; 
+    max-width: 75%;
+    display: flex;
+    justify-content: center;
+    overflow: visible !important;  
 }
 
     .thumbsSwiper .swiper-slide {
@@ -260,17 +262,18 @@ button >*{
         padding: 0 10px;
         background-color: transparent;
         border-radius: 20px;
-    }
-
-    .thumbsSwiper .swiper-slide {
-        border-radius: 15px;
-        transition: transform .7s;
+        transition: transform 0.7s ease, box-shadow 0.7s ease;
     }
 
         .thumbsSwiper .swiper-slide img {
             border-radius: 15px;
+            display: block;
+            margin: 0 auto;  
         }
 
         .thumbsSwiper .swiper-slide:hover {
             transform: translateY(-26%);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
         }
+
+
