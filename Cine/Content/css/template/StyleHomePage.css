@@ -232,7 +232,7 @@ button {
     }
 
 .btn-primary {
-    background-image: linear-gradient(to lefr, var(--primary-color), var(--secondary-color));
+    background-color: none;
     padding: 13px 45px;
     transition: all .7s;
 }
