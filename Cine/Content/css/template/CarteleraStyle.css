@@ -56,7 +56,14 @@ body {
     background: red;
     color: white;
     text-decoration: none;
-    padding: 10px;
+/*Arreglar el padding*/
+
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 14px;
     font-weight: bold;
+    border: none;
 }
+
