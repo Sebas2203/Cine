@@ -50,7 +50,7 @@
             <div id="desc">
                 <p>Dune (2021) es una película de ciencia ficción dirigida por Denis Villeneuve, basada en la novela homónima de Frank Herbert. La historia sigue a Paul Atreides, un joven noble con un destino grandioso, cuya familia es enviada al peligroso planeta Arrakis para administrar la extracción de la especia melange, el recurso más valioso del universo. Sin embargo, una traición mortal obliga a Paul y a su madre a refugiarse entre los Fremen, los habitantes del desierto, donde deberá enfrentar su destino y descubrir su verdadero poder</p>
             </div>
-            <asp:Button ID="btnCartelera" runat="server" Text="Comprar Entrada" CssClass="btn-primary" />
+            <asp:Button ID="btnCartelera" runat="server" Text="Ver Horarios" CssClass="btn-primary" Onclick="btnCartelera_Click"/>
         </div>
         <!-- Swiper pagination -->
         <div class="swiper-pagination"></div>
@@ -78,6 +78,5 @@
             </div>
         </div>
     </div>
-
 
 </asp:Content>

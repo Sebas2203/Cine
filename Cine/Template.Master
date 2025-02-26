@@ -10,8 +10,9 @@
     <!-- CSS file -->
     <link href="content\css\template\StyleHomePage.css" rel="stylesheet" />
     <link href="content\css\template\LoginRegister.css" rel="stylesheet" />
+    <link href="content\css\template\CarteleraStyle.css" rel="stylesheet" />
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-R7tuD9W1lAXTwp53orj6UNLl1C9G1MZ5/wC9U1w6UoXGzUw0U7vve2HvI9B/2B3E" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="content/media/filmBlue.ico">
     <!-- Swiper CSS -->
     <link
         rel="stylesheet"
@@ -31,31 +32,17 @@
                 <nav>
                     <ul>
                         <li><a href="/HomePage.aspx">Home</a></li>
-                        <li><a href="/Cartelera.aspx">Cartelera</a></li>
                         <li><a href="/Login.aspx">Login</a></li>
                         <li><a href="/Register.aspx">Register</a></li>
-                        <li><i class="fa-solid fa-user"></i></li>
                     </ul>
                 </nav>
             </header>
-
-
-            <!-- <header>
-                <!--<a href="/HomePage.aspx" runat="server">
-                    <img src="content\media\filmWhite.png" alt="WhiteLogo" class="logo" /></a>-->
-            <!--<nav>
-                    <ul class="nav-links">
-                        <li><a href="/HomePage.aspx" runat="server">Home</a></li>
-                        <li><a href="/Login.aspx" runat="server">Login</a></li>
-                        <li><a href="/Register.aspx" runat="server">Register</a></li>
-                    </ul>
-                </nav>
-            </header>-->
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
+
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

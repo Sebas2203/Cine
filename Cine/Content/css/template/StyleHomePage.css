@@ -102,7 +102,7 @@ a:hover {
 /*content*/
 
 .content {
-    height: 70vh;
+    height: 55vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -276,6 +276,6 @@ button {
             margin: 0 auto;
         }
 
-        .thumbsSwiper .swiper-slide:hover {
+/*        .thumbsSwiper .swiper-slide:hover {
             transform: translateY(-26%);
-        }
+        }*/
