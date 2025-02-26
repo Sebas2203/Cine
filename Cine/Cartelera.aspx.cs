@@ -46,7 +46,7 @@ namespace Cine
                 btn.Text = "Comprar";
                 btn.ID = $"btnComprar_ {item.id}";
                 //CSS al boton
-                btn.CssClass = "btnClass";
+                btn.CssClass = "boton";
                 //agregar un evento al boton
                 //btn.Click += new EventHandler(btnComprar_Click);
                 div.Controls.Add(btn);
