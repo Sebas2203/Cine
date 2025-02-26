@@ -88,3 +88,19 @@ swiper.on('activeIndexChange', function(){
     changeTitle(swiper.activeIndex);
 })
 
+
+// Actualizar el hidden Filed
+var changeTitle = (index) => {
+    document.querySelector('#title h1').innerText = titles[index].title;
+    document.querySelector('#sub-title p').innerText = titles[index].subTitle;
+    document.querySelector('#desc p').innerText = titles[index].desc;
+
+    // Guardar en el HiddenField de ASP.NET
+    document.getElementById('<%= hfSelectedMovie.ClientID %>').value = JSON.stringify(titles[index]);
+}
+
+// Detectar cambio de slide y actualizar los datos
+swiper.on('activeIndexChange', function () {
+    changeTitle(swiper.activeIndex);
+});
+
