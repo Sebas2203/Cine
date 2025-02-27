@@ -136,6 +136,7 @@
     <Content Include="Content\Media\tumba.jpg" />
     <Content Include="Content\css\template\LoginRegister.css" />
     <Content Include="Content\css\template\mainTemplate.css" />
+    <Content Include="DataFiles\asientos.xml" />
     <Content Include="Default.aspx" />
     <Content Include="Factura.aspx" />
     <Content Include="favicon.ico" />
@@ -177,6 +178,7 @@
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\js\asientos.js" />
     <Content Include="Scripts\js\MainHomePage.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -201,6 +203,8 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="css\asientos.css" />
+    <Content Include="TempSeleccionAsientos.aspx" />
     <Content Include="tickets.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -292,6 +296,13 @@
     <Compile Include="Template.Master.designer.cs">
       <DependentUpon>Template.Master</DependentUpon>
     </Compile>
+    <Compile Include="TempSeleccionAsientos.aspx.cs">
+      <DependentUpon>TempSeleccionAsientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TempSeleccionAsientos.aspx.designer.cs">
+      <DependentUpon>TempSeleccionAsientos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="tickets.aspx.cs">
       <DependentUpon>tickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,7 +321,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataFiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
