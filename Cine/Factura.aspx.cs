@@ -32,9 +32,9 @@ namespace Cine
                     {
                         using (Bitmap qrCodeImage = qrCode.GetGraphic(20))
                         {
-                            string filePath = Server.MapPath("~/qr_codes/QRCode.png");
+                            string filePath = Server.MapPath("Content/QRCodes/QRCode.png");
                             qrCodeImage.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
-                            return "/qr_codes/QRCode.png";
+                            return "Content/QRCodes/QRCode.png";
                         }
                     }
                 }

@@ -11,22 +11,23 @@
     <form id="form1" runat="server">
         <div class="ticket-container">
             <div class="ticket-header">
-                <h1>Event Ticket</h1>
-                <p>Event Date: 25th Feb 2025</p>
+                <h1>Cine UH</h1>
+                <p>Comprobante de entrada</p>
             </div>
             <div class="ticket-body">
                 <div class="event-details">
                     <h2>Event Name</h2>
-                    <p>Location: Main Hall, City Center</p>
-                    <p>Seat: A12</p>
-                    <p>Time: 7:00 PM</p>
+                    <p>Asiento(s): </p>
+                    <p>Precio IVAI: </p>
                 </div>
                 <div class="qr-code">
                     <asp:Image ID="qrCodeImage" runat="server" alt="QR Code" />
                 </div>
             </div>
+            <div style="text-align: left; margin-top: 20px;">
+                <button type="button" onclick="printTicket()">Imprimir Boleto</button>
+            </div>
             <div class="ticket-footer">
-                <p>Powered by XYZ Ticketing</p>
             </div>
         </div>
             <div class="dialog-container" id="divMensaje" style="display: none;" runat="server">
