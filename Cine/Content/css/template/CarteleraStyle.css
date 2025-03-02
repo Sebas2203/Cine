@@ -1,9 +1,10 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 body {
     background-image: url('../../media/cinema.jpg');
-    background-size:auto; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-size: auto; /* Ajusta la imagen para cubrir toda la pantalla */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: white;
 }
 
 .CarteleraTitulo {

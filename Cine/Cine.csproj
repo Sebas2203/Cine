@@ -136,6 +136,7 @@
     <Content Include="Content\Media\tumba.jpg" />
     <Content Include="Content\css\template\LoginRegister.css" />
     <Content Include="Content\css\template\mainTemplate.css" />
+    <Content Include="DataFiles\Peliculas.xml" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -302,7 +303,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataFiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

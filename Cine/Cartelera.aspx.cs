@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Cine;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Xml.Serialization;
 
 namespace Cine
 {
@@ -12,7 +15,6 @@ namespace Cine
     {
         //crear una lista de peliculas = Cartelera Peliculas
         List<Peliculas> listaPeliculas = new List<Peliculas>();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             //agregar los elementos a la lista de objetos
@@ -34,8 +36,6 @@ namespace Cine
             {
                 //crear un div para cada articulo
                 HtmlGenericControl div = new HtmlGenericControl("div");
-                //div.InnerHtml = $"<p>{item.nombrePelicula}</p><br><img src='{item.urlImagen}'alt='{item.nombrePelicula}'/>";
-
                 div.InnerHtml += $"<div class='pelicula'> <div class='etiqueta'>ESTRENO</div> <img src='{item.urlImagen}' alt='{item.nombrePelicula}'></div>";
 
                 //agregar un CSS
@@ -44,11 +44,11 @@ namespace Cine
                 //agregar boton
                 Button btn = new Button();
                 btn.Text = "Comprar";
-                btn.ID = $"btnComprar_ {item.id}";
+                btn.ID = $"btnComprar-{item.id}";
                 //CSS al boton
                 btn.CssClass = "btnClass";
                 //agregar un evento al boton
-                //btn.Click += new EventHandler(btnComprar_Click);
+                btn.Click += new EventHandler(btnComprar_Click);
                 div.Controls.Add(btn);
 
 
@@ -57,5 +57,68 @@ namespace Cine
             }
         }
 
+
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //capturar el id del boton
+                Button btn = (Button)sender;
+                string btnId = btn.ClientID;
+
+                if (!string.IsNullOrEmpty(btnId))
+                {
+                    int idPelicula = int.Parse(btnId.Split('-')[1]);
+
+                    //buscar e; articulo en la lsita de objetos
+                    var peliFiltrada = new Peliculas();
+
+                    peliFiltrada = listaPeliculas.FirstOrDefault(x => x.id == idPelicula);
+
+                    //agregar el articulo a la pagina de ticket
+                    if (peliFiltrada != null)
+                    {
+                        if (peliFiltrada.id == idPelicula)
+                        {
+                            //crear una instancia del tikect 
+                            Ticket ticket = new Ticket();
+
+                            //cargar los datos del ticket
+                            ticket.pelicula = peliFiltrada;
+                            //ticket.cantidadEntradas = 1;
+
+                            //inicializamos una lista de objetos para guardar los tickets
+                            //revisar si lista de tickets existe en la session
+                            //List<Ticket> listaTickets = new List<Ticket>();
+                            
+                            ////si no existe la listra de tickets, se crea
+                            //if(listaTickets == null)
+                            //{
+                            //    listaTickets = new List<Ticket>();
+                            //}
+                            //listaTickets.Add(ticket);
+
+                            Session["pelicula"] = ticket;
+
+                            //redireccionar a la pagina de ticket
+                            Response.Redirect("tickets.aspx", false);
+                        }
+                        else
+                        {
+                            throw new Exception("Error");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontro la pelicula");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
+
