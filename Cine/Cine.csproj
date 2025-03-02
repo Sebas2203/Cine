@@ -45,6 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -92,6 +97,7 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -118,6 +124,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+
+    <Content Include="Content\css\template\FacturaStyle.css" />
+
     <Content Include="Content\css\template\CarteleraStyle.css" />
     <Content Include="Content\css\template\StyleHomePage.css" />
     <Content Include="Content\Media\banner-dune.jpg" />
@@ -127,6 +136,7 @@
     <Content Include="Content\Media\banner-tumba.jpg" />
     <Content Include="Content\Media\cinema.jpg" />
     <Content Include="Content\Media\dune.jpg" />
+
     <Content Include="Content\Media\filmBlack.png" />
     <Content Include="Content\Media\filmBlue.ico" />
     <Content Include="Content\Media\filmWhite.png" />
@@ -321,6 +331,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+
+    <Folder Include="Content\QRCodes\" />
+    <Folder Include="DataFiles\" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
