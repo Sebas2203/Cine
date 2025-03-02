@@ -21,11 +21,11 @@ namespace Cine
             Peliculas Cartelera = new Peliculas();
 
             //agregar a la lista de objetos
-            listaPeliculas.Add(new Peliculas { id = 1, nombrePelicula = "Dune", urlImagen = "content/media/banner-dune.jpg" });
-            listaPeliculas.Add(new Peliculas { id = 2, nombrePelicula = "Fast & Furious: Tokyo Drift", urlImagen = "content/media/banner-tokyo.jpg" });
-            listaPeliculas.Add(new Peliculas { id = 3, nombrePelicula = "Star Wars: Episodio 3", urlImagen = "content/media/banner-starwars.jpg" });
-            listaPeliculas.Add(new Peliculas { id = 4, nombrePelicula = "La tumba de las Luciernagas", urlImagen = "content/media/banner-tumba.jpg" });
-            listaPeliculas.Add(new Peliculas { id = 5, nombrePelicula = "The GodFather", urlImagen = "content/media/banner-god.jpg" });
+            listaPeliculas.Add(new Peliculas { id = 1, precio = 3000 , horario = "20:15", nombrePelicula = "Dune", urlImagen = "content/media/banner-dune.jpg", descripcion = "Ciencia Ficción/Aventura/Drama" });
+            listaPeliculas.Add(new Peliculas { id = 2, precio = 3000 , horario = "21:30", nombrePelicula = "Fast & Furious: Tokyo Drift", urlImagen = "content/media/banner-tokyo.jpg", descripcion = "Acción/Carreras Automovilísticas" });
+            listaPeliculas.Add(new Peliculas { id = 3, precio = 3000 , horario = "05:15", nombrePelicula = "Star Wars: Episodio 3", urlImagen = "content/media/banner-starwars.jpg", descripcion = "Ciencia Ficción/Aventura/Drama" });
+            listaPeliculas.Add(new Peliculas { id = 4, precio = 3000 , horario = "19:15", nombrePelicula = "La tumba de las Luciernagas", urlImagen = "content/media/banner-tumba.jpg", descripcion = "Drama/Bélico/Tragedia" });
+            listaPeliculas.Add(new Peliculas { id = 5, precio = 3000 , horario = "02:15", nombrePelicula = "The GodFather", urlImagen = "content/media/banner-god.jpg", descripcion = "Crimen/Drama/Thriller" });
 
 
             //sesion de la lista de peliculas
@@ -43,7 +43,7 @@ namespace Cine
 
                 //agregar boton
                 Button btn = new Button();
-                btn.Text = "Comprar";
+                btn.Text = "Ver Horario";
                 btn.ID = $"btnComprar-{item.id}";
                 //CSS al boton
                 btn.CssClass = "boton";

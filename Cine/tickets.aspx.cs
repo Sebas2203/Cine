@@ -21,40 +21,50 @@ namespace Cine
             {
                 if (Session["pelicula"] == null)
                 {
-                    throw new Exception("No hay sesion");
+                    throw new Exception("No hay sesión");
                 }
-                else
+
+                // Obtener el Ticket desde la sesión
+                Ticket extractor = (Ticket)Session["pelicula"];
+
+                if (extractor.pelicula == null)
                 {
-
-                    List<Peliculas> listaPeliculas = (List<Peliculas>)Session["listaPeliculas"];
-
-                    Ticket extractor = (Ticket)Session["ticket"];
-
-                    ////crear un div para cada articulo
-                    //HtmlGenericControl div = new HtmlGenericControl("div");
-                    //div.InnerHtml += $"<div class='pelicula'> <div class='etiqueta'>ESTRENO</div> <img src='{listaPeliculas.urlImagen}' alt='{item.nombrePelicula}'></div>";
-
-                    ////agregar un CSS
-                    //div.Attributes["class"] = "pelicula";
-
-                    ////agregar boton
-                    //Button btn = new Button();
-                    //btn.Text = "Comprar";
-                    //btn.ID = $"btnComprar-{item.id}";
-                    ////CSS al boton
-                    //btn.CssClass = "btnClass";
-                    ////agregar un evento al boton
-                    //btn.Click += new EventHandler(btnComprar_Click);
-                    //div.Controls.Add(btn);
-
-
-                    ////agregar el div creado al form del HTML
-                    //cartelera.Controls.Add(div);
+                    throw new Exception("No se encontró la película en el ticket.");
                 }
+
+                // Mostrar los datos en el div
+                divCompras.InnerHtml = $@"
+                    <div class='containerTicket'>
+                        <h2 class='tituloPeli'>{extractor.pelicula.nombrePelicula}</h2>
+                        <h3 class='desc'>{extractor.pelicula.descripcion}</h3>
+                        <p class='precio'>Precio: ₡{extractor.pelicula.precio}</p>
+                        <p class='hora'> Hora de función: {extractor.pelicula.horario}</p>
+                        <img src='{extractor.pelicula.urlImagen}' width='300' class='imagenPeli'>
+                    </div>
+                ";
+
+
             }
             catch (Exception ex)
             {
-                throw new Exception("pelicula sin existencia");
+                divCompras.InnerHtml = $"<p style='color:red;'>Error: {ex.Message}</p>";
+            }
+            
+        }
+
+        protected void comprarTicket_Click(object sender, EventArgs e)
+        {
+            //redireccionar a la pagina de comprar entrada
+            if (Session["UserLogin"] == null)
+            {
+                //Si no hay usuario logueado, redireccionar a la pagina de login
+                System.Threading.Thread.Sleep(3000);
+                Response.Redirect("tickets.aspx");
+            }
+            else
+            {
+                //Si hay usuario logueado, redireccionar a la pagina de cartelera
+                Response.Redirect("tempSeleccionAsientos.aspx");
             }
         }
     }

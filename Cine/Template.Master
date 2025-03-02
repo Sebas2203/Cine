@@ -11,6 +11,7 @@
     <link href="content\css\template\StyleHomePage.css" rel="stylesheet" />
     <link href="content\css\template\LoginRegister.css" rel="stylesheet" />
     <link href="content\css\template\CarteleraStyle.css" rel="stylesheet" />
+    <link href="content\css\template\styleTickets.css" rel="stylesheet" />
     <!-- Icons -->
     <link rel="icon" type="image/x-icon" href="content/media/filmBlue.ico">
     <!-- Swiper CSS -->

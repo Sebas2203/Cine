@@ -1,0 +1,61 @@
+﻿.containerTicket {
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    background: #222;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 50px auto; /* Centra horizontalmente */
+}
+
+.tituloPeli {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.desc {
+    font-size: 16px;
+    align-items: center;
+    color: #ccc;
+
+}
+
+.precio, .hora {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.imagenPeli {
+    display: block;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+.comprarTicket {
+    display: block;
+    width: 150px;
+    padding: 10px;
+    margin: 20px auto; /* Centrado */
+    background-color: #ff6600;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+    .comprarTicket:hover {
+        background-color: #cc5500;
+        transform: scale(1.05);
+    }
+
+    .comprarTicket:active {
+        background-color: #993d00;
+        transform: scale(0.98);
+    }

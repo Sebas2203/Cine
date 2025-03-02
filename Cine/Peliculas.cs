@@ -13,6 +13,7 @@ namespace Cine
         public string descripcion { get; set; }
         public string urlImagen { get; set; }
         public decimal precio { get; set; }
+        public string horario { get; set; }
     }
 
     public class Ticket
