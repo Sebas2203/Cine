@@ -14,4 +14,10 @@ namespace Cine
         public string urlImagen { get; set; }
         public decimal precio { get; set; }
     }
+
+    public class Ticket
+    {
+        public Peliculas pelicula { get; set; }
+        //public int cantidadEntradas { get; set; }
+    }
 }
