@@ -7,28 +7,47 @@
     <title>Cine UH</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <!-- <link href="Content/Site.css" rel="stylesheet" /> -->
-    <!-- <link href="content\css\template\mainTemplate.css" rel="stylesheet" /> -->
+    <!-- CSS file -->
+    <link href="content\css\template\StyleHomePage.css" rel="stylesheet" />
+    <link href="content\css\template\LoginRegister.css" rel="stylesheet" />
+    <link href="content\css\template\CarteleraStyle.css" rel="stylesheet" />
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="content/media/filmBlue.ico">
+    <!-- Swiper CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
 
-
-           <header>
-                <a href="/HomePage.aspx" runat="server"><img src="content\media\filmWhite.png" alt="WhiteLogo" class="logo" /></a>
+            <!-- overlay -->
+            <header class="header">
+                <div class="logo">
+                    <!-- <img src="content\media\Logo.png" alt="logo" /> -->
+                    <h1>CINE UH</h1>
+                </div>
                 <nav>
-                    <ul class="nav-links">
-                        <li><a href="/HomePage.aspx" runat="server">Home</a></li>
-                        <li><a href="/Login.aspx" runat="server">Login</a></li>
-                        <li><a href="/Register.aspx" runat="server">Register</a></li>
+                    <ul>
+                        <li><a href="/HomePage.aspx">Home</a></li>
+                        <li><a href="/Login.aspx">Login</a></li>
+                        <li><a href="/Register.aspx">Register</a></li>
                     </ul>
                 </nav>
-            </header> 
-
+            </header>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Archivo JS-->
+    <script src="scripts\js\MainHomePage.js"></script>
 </body>
 </html>
