@@ -9,8 +9,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1>Seleccion de asientos</h1>
         <div>
-            <div id="asientos-container" runat="server"></div> <%--carga dinámicamente los asientos con base en el XML.--%> 
+            <div id="AsientosContainer" runat="server"></div> <%--carga dinámicamente los asientos con base en el XML.--%> 
         </div>
     </form>
     <script src="Scripts/js/asientos.js"></script>

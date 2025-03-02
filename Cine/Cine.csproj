@@ -124,11 +124,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-
     <Content Include="Content\css\template\FacturaStyle.css" />
-
     <Content Include="Content\css\template\CarteleraStyle.css" />
     <Content Include="Content\css\template\StyleHomePage.css" />
+    <Content Include="Content\css\template\styleTickets.css" />
     <Content Include="Content\Media\banner-dune.jpg" />
     <Content Include="Content\Media\banner-god.jpg" />
     <Content Include="Content\Media\banner-starwars.jpg" />
@@ -136,7 +135,6 @@
     <Content Include="Content\Media\banner-tumba.jpg" />
     <Content Include="Content\Media\cinema.jpg" />
     <Content Include="Content\Media\dune.jpg" />
-
     <Content Include="Content\Media\filmBlack.png" />
     <Content Include="Content\Media\filmBlue.ico" />
     <Content Include="Content\Media\filmWhite.png" />
@@ -331,10 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-
     <Folder Include="Content\QRCodes\" />
-    <Folder Include="DataFiles\" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

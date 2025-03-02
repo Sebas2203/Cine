@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Tickets</h1>
+    <h1 class="tituloTickets">Tickets</h1>
+    <asp:Button ID="comprarTicket" CssClass="comprarTicket" runat="server" Text="Comprar" OnClick="comprarTicket_Click" />
     <div id="divCompras" runat="server">
     </div>
+
 </asp:Content>
