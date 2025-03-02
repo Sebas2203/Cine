@@ -85,18 +85,6 @@ namespace Cine
 
                             //cargar los datos del ticket
                             ticket.pelicula = peliFiltrada;
-                            //ticket.cantidadEntradas = 1;
-
-                            //inicializamos una lista de objetos para guardar los tickets
-                            //revisar si lista de tickets existe en la session
-                            //List<Ticket> listaTickets = new List<Ticket>();
-                            
-                            ////si no existe la listra de tickets, se crea
-                            //if(listaTickets == null)
-                            //{
-                            //    listaTickets = new List<Ticket>();
-                            //}
-                            //listaTickets.Add(ticket);
 
                             Session["pelicula"] = ticket;
 
