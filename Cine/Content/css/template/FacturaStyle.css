@@ -63,6 +63,15 @@
 }
 
     .qr-code img {
-        width: 150px;
-        height: 150px;
-    }
+}
+
+.print-button {
+    width: 100px;
+    padding: 10px;
+    background-color: #001f3f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}

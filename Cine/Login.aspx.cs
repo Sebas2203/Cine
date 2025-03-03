@@ -77,7 +77,7 @@ namespace Cine
 
                 // Redirect to the home page
                 Session["LoginFailed"] = null;
-                Response.Redirect("Home.aspx");
+                Response.Redirect("HomePage.aspx");
             }
             else
             {

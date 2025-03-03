@@ -26,7 +26,7 @@ namespace Cine
                 {
                     mensajeTexto.InnerText = "Su sesión ya fue iniciada. Redireccionando a la cartelera";
                     System.Threading.Thread.Sleep(3000);
-                    Response.Redirect("Home.aspx");
+                    Response.Redirect("HomePage.aspx");
                 }
                 else
                 {
