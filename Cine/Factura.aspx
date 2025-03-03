@@ -1,11 +1,34 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Factura.aspx.cs" Inherits="Cine.Factura" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" type="text/css" href="/Content/css/template/FacturaStyle.css"/>
-    <title>Tiquete de entrada</title>
+    <title>Boleto de entrada</title>
+    <style>
+        .ticket-container {
+            border: 2px solid #000;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+        .ticket-header, .ticket-footer {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .ticket-body {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        // JavaScript para el boton de print
+        function printTicket() {
+            window.print();
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,17 +38,15 @@
                 <p>Comprobante de entrada</p>
             </div>
             <div class="ticket-body">
-                <div class="event-details">
-                    <h2>Event Name</h2>
-                    <p>Asiento(s): </p>
-                    <p>Precio IVAI: </p>
+                <div id="divDetalles" style="text-align: left; margin-top: 20px;" runat="server">
+
                 </div>
                 <div class="qr-code">
-                    <asp:Image ID="qrCodeImage" runat="server" alt="QR Code" />
+                    <asp:Image ID="qrCodeImage" runat="server" alt="QR Code" Height="250px" Width="250px" HorizontalAlign="Center"/>
                 </div>
             </div>
-            <div style="text-align: left; margin-top: 20px;">
-                <button type="button" onclick="printTicket()">Imprimir Boleto</button>
+            <div style="text-align: center; margin-top: 20px;">
+                <button  type="button" onclick="printTicket()">Imprimir Boleto</button>
             </div>
             <div class="ticket-footer">
             </div>
