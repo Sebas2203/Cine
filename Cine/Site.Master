@@ -24,7 +24,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="Home.aspx" runat="server">Home</a></li>
+                <li><a href="HomePage.aspx" runat="server">Home</a></li>
 
             </ul>
         </nav>
