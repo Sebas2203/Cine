@@ -7,6 +7,7 @@ using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Documents;
 using QRCoder;
 
 namespace Cine
@@ -19,6 +20,42 @@ namespace Cine
             {
                 string qrCodeDataUrl = GenerateQRCode(DatosFactura()); //genera el QR con el string que sale del metodo DatosFactura, ademas de llenar el div los datos de la pelicula seleccionada
                 qrCodeImage.ImageUrl = qrCodeDataUrl;
+
+                ////esto carga la cantidad de asientos seleccionados para usar el dato en una operación para conseguir el total a cobrar. 
+                //if (Session["asientosSeleccionados"] != null && Session["cantidadAsientos"] != null)
+                //{
+                //    string asientos = Session["asientosSeleccionados"].ToString();
+                //    int cantidad = (int)Session["cantidadAsientos"];
+
+                //    // Definir el precio de cada asiento (puedes cambiarlo según sea necesario)
+                //    int precioPorAsiento = 5000;
+
+                //    // Calcular el total a pagar
+                //    int total = cantidad * precioPorAsiento;
+
+                //    //esto podría ir en el aspx. para poder tener un display de la informacion:::
+
+                //    //< asp:Label ID = "lblAsientosSeleccionados" runat = "server" CssClass = "asientos-info" />< br />
+                //    //< asp:Label ID = "lblCantidad" runat = "server" CssClass = "cantidad-info" />< br />
+                //    //< asp:Label ID = "lblTotal" runat = "server" CssClass = "total-info" />
+
+                //    //para que se vea así
+                //    //Asientos seleccionados: A1, A2, B4
+                //    //Cantidad de asientos: 3
+                //    //Total a pagar: ₡15000
+
+
+
+                //    lblAsientosSeleccionados.Text = "Asientos seleccionados: " + asientos;
+                //    lblCantidad.Text = "Cantidad de asientos: " + cantidad;
+                //    lblTotal.Text = "Total a pagar: ₡" + total;
+                //}
+                //else
+                //{
+                //    lblAsientosSeleccionados.Text = "No hay asientos seleccionados.";
+                //    lblCantidad.Text = "";
+                //    lblTotal.Text = "";
+                //}
             }
         }
 

@@ -1,0 +1,78 @@
+﻿/* Estilos generales de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos del contenedor de asientos */
+#AsientosContainer {
+    display: grid;
+    grid-template-columns: repeat(8, 30px); /* 8 columnas */
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos de los asientos */
+.seat {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+    /* Estados de los asientos */
+    .seat.disponible {
+        background-color: blue;
+    }
+
+    .seat.ocupado {
+        background-color: gray;
+        cursor: not-allowed;
+    }
+
+    .seat.seleccionado {
+        background-color: lightgray;
+    }
+
+    /* Efecto hover */
+    .seat:hover {
+        transform: scale(1.2);
+    }
+
+/* Pantalla del cine */
+.screen {
+    width: 90%;
+    height: 40px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin: 10px auto;
+    line-height: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+}
