@@ -124,6 +124,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\template\Asientos.css" />
     <Content Include="Content\css\template\FacturaStyle.css" />
     <Content Include="Content\css\template\CarteleraStyle.css" />
     <Content Include="Content\css\template\StyleHomePage.css" />
@@ -144,7 +145,11 @@
     <Content Include="Content\Media\tumba.jpg" />
     <Content Include="Content\css\template\LoginRegister.css" />
     <Content Include="Content\css\template\mainTemplate.css" />
-    <Content Include="DataFiles\asientos.xml" />
+    <Content Include="DataFiles\1.xml" />
+    <Content Include="DataFiles\2.xml" />
+    <Content Include="DataFiles\3.xml" />
+    <Content Include="DataFiles\4.xml" />
+    <Content Include="DataFiles\5.xml" />
     <Content Include="Default.aspx" />
     <Content Include="Factura.aspx" />
     <Content Include="favicon.ico" />
@@ -211,8 +216,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
-    <Content Include="css\asientos.css" />
-    <Content Include="TempSeleccionAsientos.aspx" />
+    <Content Include="SeleccionAsientos.aspx" />
     <Content Include="tickets.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -304,12 +308,12 @@
     <Compile Include="Template.Master.designer.cs">
       <DependentUpon>Template.Master</DependentUpon>
     </Compile>
-    <Compile Include="TempSeleccionAsientos.aspx.cs">
-      <DependentUpon>TempSeleccionAsientos.aspx</DependentUpon>
+    <Compile Include="SeleccionAsientos.aspx.cs">
+      <DependentUpon>SeleccionAsientos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TempSeleccionAsientos.aspx.designer.cs">
-      <DependentUpon>TempSeleccionAsientos.aspx</DependentUpon>
+    <Compile Include="SeleccionAsientos.aspx.designer.cs">
+      <DependentUpon>SeleccionAsientos.aspx</DependentUpon>
     </Compile>
     <Compile Include="tickets.aspx.cs">
       <DependentUpon>tickets.aspx</DependentUpon>

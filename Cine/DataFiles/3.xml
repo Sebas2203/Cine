@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<asientos>
+	<asiento id="a1" estado="ocupado" />
+	<asiento id="a2" estado="disponible" />
+	<asiento id="a3" estado="disponible" />
+	<asiento id="a4" estado="ocupado" />
+	<asiento id="a5" estado="disponible" />
+	<asiento id="a6" estado="ocupado" />
+	<asiento id="a7" estado="disponible" />
+	<asiento id="a8" estado="disponible" />
+	
+	<asiento id="b1" estado="disponible" />
+	<asiento id="b2" estado="disponible" />
+	<asiento id="b3" estado="disponible" />
+	<asiento id="b4" estado="disponible" />
+	<asiento id="b5" estado="disponible" />
+	<asiento id="b6" estado="disponible" />
+	<asiento id="b7" estado="disponible" />
+	<asiento id="b8" estado="disponible" />
+	
+	<asiento id="c1" estado="disponible" />
+	<asiento id="c2" estado="disponible" />
+	<asiento id="c3" estado="disponible" />
+	<asiento id="c4" estado="disponible" />
+	<asiento id="c5" estado="disponible" />
+	<asiento id="c6" estado="disponible" />
+	<asiento id="c7" estado="disponible" />
+	<asiento id="c8" estado="disponible" />
+	
+	<asiento id="d1" estado="disponible" />
+	<asiento id="d2" estado="disponible" />
+	<asiento id="d3" estado="disponible" />
+	<asiento id="d4" estado="disponible" />
+	<asiento id="d5" estado="disponible" />
+	<asiento id="d6" estado="disponible" />
+	<asiento id="d7" estado="disponible" />
+	<asiento id="d8" estado="disponible" />
+	
+	<asiento id="e1" estado="disponible" />
+	<asiento id="e2" estado="disponible" />
+	<asiento id="e3" estado="disponible" />
+	<asiento id="e4" estado="disponible" />
+	<asiento id="e5" estado="disponible" />
+	<asiento id="e6" estado="disponible" />
+	<asiento id="e7" estado="disponible" />
+	<asiento id="e8" estado="disponible" />
+	
+	<asiento id="f1" estado="disponible" />
+	<asiento id="f2" estado="disponible" />
+	<asiento id="f3" estado="disponible" />
+	<asiento id="f4" estado="disponible" />
+	<asiento id="f5" estado="disponible" />
+	<asiento id="f6" estado="disponible" />
+	<asiento id="f7" estado="disponible" />
+	<asiento id="f8" estado="disponible" />
+</asientos>

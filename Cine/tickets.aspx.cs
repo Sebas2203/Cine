@@ -64,7 +64,7 @@ namespace Cine
             else
             {
                 //Si hay usuario logueado, redireccionar a la pagina de cartelera
-                Response.Redirect("tempSeleccionAsientos.aspx");
+                Response.Redirect("SeleccionAsientos.aspx");
             }
         }
     }
