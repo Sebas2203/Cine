@@ -7,6 +7,7 @@ using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using QRCoder;
 
@@ -95,19 +96,21 @@ namespace Cine
             {
                 if ( (Session["pelicula"] != null) && (Session["UserLogin"] != null) )
                 {
-                    Peliculas datosPeli = (Peliculas)Session["pelicula"];
+                    Ticket datosPeli = (Ticket)Session["pelicula"];
                     User datosUsuario = (User)Session["UserLogin"];
-                    
+                    int cantidadAsientos = (int)Session["cantidadAsientos"];
+
                     divDetalles.InnerHtml = $@"
                     <div class='containerTicket'>
                         <h3 class='cliente'>Correo de cliente: {datosUsuario.username}</h3>
-                        <h2 class='tituloPeli'>{datosPeli.nombrePelicula}</h2>
-                        <p class='hora'> Hora de función: {datosPeli.horario}</p>
-                        <p class='precio'>Total IVAI: ₡{datosPeli.precio}</p> //falta hacer calculo basado en el numero de asientos seleccionados
+                        <h2 class='tituloPeli'>{datosPeli.pelicula.nombrePelicula}</h2>
+                        <p class='hora'> Hora de función: {datosPeli.pelicula.horario}</p>
+                        <p class='asientos'> Cantidad de asientos: {cantidadAsientos}</p>
+                        <p class='precio'>Total IVAI: ₡{datosPeli.pelicula.precio * cantidadAsientos}</p>
                     </div>
                     ";
 
-                    QRString = datosPeli.nombrePelicula+datosPeli.horario.ToString()+datosUsuario.username;
+                    QRString = datosPeli.pelicula.nombrePelicula + datosPeli.pelicula.horario.ToString()+datosUsuario.username;
                 }
                 else
                 {

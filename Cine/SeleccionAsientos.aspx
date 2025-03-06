@@ -19,11 +19,14 @@
                 <span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> <span>6</span> <span>7</span> <span>8</span>
             </div>
 
-            <div id="AsientosContainer" runat="server" class="asientos-container"></div>
+            <div id="AsientosContainer" runat="server" class="asientos-container">
+            </div>
             <%--carga dinámicamente los asientos con base en el XML.--%>
         </div>
         <asp:Button ID="btnContinuar" runat="server" CssClass="btn-continuar"
             Text="Continuar con la compra" OnClick="btnContinuar_Click" />
+
+        <input type="hidden" id="selectedSeatsHidden" name="selectedSeatsHidden" />
     </form>
     <script src="Scripts/js/asientos.js"></script>
 </body>

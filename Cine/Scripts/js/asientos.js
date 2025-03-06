@@ -18,5 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 sessionStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
             }
         });
+
+    });
+    document.getElementById('btnContinuar').addEventListener('click', function () {
+        // Retrieve selected seats from sessionStorage
+        let storedSeats = sessionStorage.getItem('selectedSeats');
+
+        // Set the hidden input field value to the selected seats
+        document.getElementById('selectedSeatsHidden').value = storedSeats ? storedSeats : '';
+
+        // Optionally: Clear sessionStorage after storing (depending on your use case)
+        // sessionStorage.removeItem('selectedSeats');
     });
 });
