@@ -241,7 +241,6 @@ namespace Cine
             {
                 // Si no se seleccionaron asientos, mostrar un mensaje de error
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor, seleccione al menos un asiento.');", true);
-                //Response.Redirect("Factura.aspx");
             }
         }
 
