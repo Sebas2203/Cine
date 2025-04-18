@@ -95,6 +95,46 @@ namespace Datos
         }
 
 
+        public DataTable BuscarUsuario(string Email, string Pass)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                _connection.Open(); // Abre la conexión
+
+                using (SqlCommand cmd = new SqlCommand("dbo.sp_ObtenerUsuarioPorEmailYPassword", _connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Agregamos los parámetros correctos
+                    cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(Email) ? (object)DBNull.Value : Email);
+                    cmd.Parameters.AddWithValue("@Password", string.IsNullOrEmpty(Pass) ? (object)DBNull.Value : Pass);
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error de SQL: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general: " + ex.Message);
+            }
+            finally
+            {
+                if (_connection.State == ConnectionState.Open)
+                    _connection.Close(); // Siempre cerramos la conexión
+            }
+
+            return dt;
+        }
+
+
 
 
     }
