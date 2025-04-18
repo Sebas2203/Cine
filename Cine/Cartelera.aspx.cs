@@ -1,6 +1,7 @@
 ﻿using Cine;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -17,42 +18,45 @@ namespace Cine
         List<Peliculas> listaPeliculas = new List<Peliculas>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //agregar los elementos a la lista de objetos
-            Peliculas Cartelera = new Peliculas();
+            // Instantiate the business layer
+            Negocios.lnCine negocio = new Negocios.lnCine();
 
-            //agregar a la lista de objetos
-            listaPeliculas.Add(new Peliculas { id = 1, precio = 3000 , horario = "20:15", nombrePelicula = "Dune", urlImagen = "content/media/banner-dune.jpg", descripcion = "Ciencia Ficción/Aventura/Drama" });
-            listaPeliculas.Add(new Peliculas { id = 2, precio = 3000 , horario = "21:30", nombrePelicula = "Fast & Furious: Tokyo Drift", urlImagen = "content/media/banner-tokyo.jpg", descripcion = "Acción/Carreras Automovilísticas" });
-            listaPeliculas.Add(new Peliculas { id = 3, precio = 3000 , horario = "05:15", nombrePelicula = "Star Wars: Episodio 3", urlImagen = "content/media/banner-starwars.jpg", descripcion = "Ciencia Ficción/Aventura/Drama" });
-            listaPeliculas.Add(new Peliculas { id = 4, precio = 3000 , horario = "19:15", nombrePelicula = "La tumba de las Luciernagas", urlImagen = "content/media/banner-tumba.jpg", descripcion = "Drama/Bélico/Tragedia" });
-            listaPeliculas.Add(new Peliculas { id = 5, precio = 3000 , horario = "02:15", nombrePelicula = "The GodFather", urlImagen = "content/media/banner-god.jpg", descripcion = "Crimen/Drama/Thriller" });
+            // Obtain the DataTable of movies
+            System.Data.DataTable peliculasTable = negocio.ObtenerPeliculas_Negocios();
 
+            // Convert the DataTable to a List<Peliculas>
+            listaPeliculas = peliculasTable.AsEnumerable().Select(row => new Peliculas
+            {
+                id = row.Field<int>("id"),
+                nombrePelicula = row.Field<string>("nombrePelicula"),
+                descripcion = row.Field<string>("descripcion"),
+                urlImagen = row.Field<string>("urlImagen"),
+                precio = row.Field<decimal>("precio"),
+                horario = row.Field<string>("horario")
+            }).ToList();
 
-            //sesion de la lista de peliculas
+            // Store the list in the session
             Session["listaPeliculas"] = listaPeliculas;
 
-            //recorrer la lista de peliculas
+            // Iterate through the list of movies
             foreach (var item in listaPeliculas)
             {
-                //crear un div para cada articulo
+                // Create a div for each movie
                 HtmlGenericControl div = new HtmlGenericControl("div");
                 div.InnerHtml += $"<div class='pelicula'> <div class='etiqueta'>ESTRENO</div> <img src='{item.urlImagen}' alt='{item.nombrePelicula}'></div>";
 
-                //agregar un CSS
+                // Add CSS class
                 div.Attributes["class"] = "pelicula";
 
-                //agregar boton
+                // Add button
                 Button btn = new Button();
                 btn.Text = "Ver Horario";
                 btn.ID = $"btnComprar-{item.id}";
-                //CSS al boton
                 btn.CssClass = "boton";
-                //agregar un evento al boton
                 btn.Click += new EventHandler(btnComprar_Click);
                 div.Controls.Add(btn);
 
-
-                //agregar el div creado al form del HTML
+                // Add the created div to the HTML form
                 cartelera.Controls.Add(div);
             }
         }
