@@ -63,6 +63,8 @@ namespace Datos
 
         #endregion
 
+
+        //register
         public string RegistrarUsuario(string Email, string Pass)
         {
             try
@@ -94,7 +96,7 @@ namespace Datos
             }
         }
 
-
+        //log in
         public DataTable BuscarUsuario(string Email, string Pass)
         {
             DataTable dt = new DataTable();
@@ -134,7 +136,7 @@ namespace Datos
             return dt;
         }
 
-
+        //metodo de factura a base de datos
 
 
     }

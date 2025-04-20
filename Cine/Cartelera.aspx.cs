@@ -18,13 +18,13 @@ namespace Cine
         List<Peliculas> listaPeliculas = new List<Peliculas>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Instantiate the business layer
+            // Intanciar la clase de negocio
             Negocios.lnCine negocio = new Negocios.lnCine();
 
-            // Obtain the DataTable of movies
+            // obtener la lista de peliculas desde la datatable
             System.Data.DataTable peliculasTable = negocio.ObtenerPeliculas_Negocios();
 
-            // Convert the DataTable to a List<Peliculas>
+            // Convertir la DataTable a List<Peliculas>
             listaPeliculas = peliculasTable.AsEnumerable().Select(row => new Peliculas
             {
                 id = row.Field<int>("id"),
@@ -35,10 +35,9 @@ namespace Cine
                 horario = row.Field<string>("horario")
             }).ToList();
 
-            // Store the list in the session
+            // lista en session
             Session["listaPeliculas"] = listaPeliculas;
 
-            // Iterate through the list of movies
             foreach (var item in listaPeliculas)
             {
                 // Create a div for each movie
