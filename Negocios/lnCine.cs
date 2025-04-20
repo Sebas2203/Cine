@@ -30,5 +30,16 @@ namespace Negocios
                 throw;
             }
         }
+
+
+        //metodo de login
+
+
+
+        //metodo de registro
+
+
+        //metodos factura
+
     }
 }

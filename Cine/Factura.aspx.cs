@@ -129,5 +129,8 @@ namespace Cine
             }
             return QRString;
         }
+
+
+        //nuevo metodo (tiene que hacer la instancia a negocios)
     }
 }
