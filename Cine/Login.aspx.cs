@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml.Serialization;
-
-namespace Cine
+﻿namespace Cine
 {
     public partial class Login : System.Web.UI.Page
     {

@@ -11,7 +11,7 @@ namespace Datos
 {
     public class ldCine
     {
-        #region connection string  
+        #region CONNECTION_STRING
 
         private SqlConnection _connection;
 
