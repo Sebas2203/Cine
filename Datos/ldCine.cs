@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;//leer información con ADO.net
 using System.Configuration;
 using System.Data;
+using Microsoft.Win32;
 
 namespace Datos
 {
@@ -199,8 +200,99 @@ namespace Datos
             return dt;
         }
 
-        //metodo de factura a base de datos
+
+        //---FACTURA---
+
+        //metodo de sp_ObtenerIDUsuario
+        public int ObtenerIDUsuario(string Email)
+        {
+            try
+            {
+                _connection.Open();
+                SqlCommand cmd = new SqlCommand("dbo.sp_ObtenerIDUsuario", _connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(Email) ? (object)DBNull.Value : Email);
+
+                object result = cmd.ExecuteScalar();
+
+                return result != null ? Convert.ToInt32(result) : -1;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
 
 
+        //metodo de sp_CrearReservaYFactura
+        public int CrearReservaYFactura(int idUsuario, int idPelicula, string numeroReserva, int cantidadAsientos)
+        {
+            try
+            {
+                _connection.Open();
+                SqlCommand cmd = new SqlCommand("dbo.sp_CrearReservaYFactura", _connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ID_Usuario", idUsuario);
+                cmd.Parameters.AddWithValue("@ID_Pelicula", idPelicula);
+                cmd.Parameters.AddWithValue("@Numero_Reserva", numeroReserva);
+                cmd.Parameters.AddWithValue("@Cantidad_Asientos", cantidadAsientos);
+
+                // Agregar el parámetro de salida
+                SqlParameter outputIdFactura = new SqlParameter("@ID_Factura", SqlDbType.Int)
+                {
+                    Direction = ParameterDirection.Output
+                };
+                cmd.Parameters.Add(outputIdFactura);
+
+                cmd.ExecuteNonQuery();
+
+                return (int)cmd.Parameters["@ID_Factura"].Value;
+            }
+            catch (Exception)
+            {
+                return -1; // Error al obtener el ID
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
+
+
+        //metodo de sp_ObtenerFacturaFinal}
+        public DataTable ObtenerFacturaFinal(int idFactura)
+        {
+            DataTable facturaTabla = new DataTable();
+
+            try
+            {
+                _connection.Open();
+                SqlCommand cmd = new SqlCommand("dbo.sp_ObtenerFacturaFinal", _connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    facturaTabla.Load(reader);
+                }
+
+                return facturaTabla;
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores  
+                Console.WriteLine("Error: " + ex.Message);
+                return facturaTabla;
+            }
+            finally
+            {
+                _connection.Close();
+            }
+        }
     }
 }

@@ -52,5 +52,46 @@ namespace Negocios
                 throw;
             }
         }
+
+        //---FACTURA---
+
+        // Método buscar id Usuario
+        public int ObtenerIDUsuario_Negocios(string email)
+        {
+            try
+            {
+                return _datos.ObtenerIDUsuario(email);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // Método CrearReservaYFactura
+        public int CrearReservaYFactura_Negocios(int idUsuario, int idPelicula, string numeroReserva, int cantidadAsientos)
+        {
+            try
+            {
+                return _datos.CrearReservaYFactura(idUsuario, idPelicula, numeroReserva, cantidadAsientos);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // Método ObtenerFacturaFinal
+        public DataTable ObtenerFacturaFinal_Negocios(int idFactura)
+        {
+            try
+            {
+                return _datos.ObtenerFacturaFinal(idFactura);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
