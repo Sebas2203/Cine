@@ -25,9 +25,14 @@ namespace Cine
 
             var usuario = _negocios.BuscarUsuario_Negocios(email, password);
 
+            User user = new User();
+
+            // Validar el usuario
             if (usuario.Rows.Count > 0)
             {
-                Session["UserLogin"] = usuario.Rows[0]["Email"].ToString();
+                user.username = usuario.Rows[0]["Email"].ToString();
+                user.password = usuario.Rows[0]["Pass"].ToString();
+                Session["UserLogin"] = user;
                 Response.Redirect("HomePage.aspx");
             }
             else

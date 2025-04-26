@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using QRCoder;
+using static QRCoder.PayloadGenerator;
 
 namespace Cine
 {
@@ -21,6 +22,7 @@ namespace Cine
             {
                 string qrCodeDataUrl = GenerateQRCode(DatosFactura()); //genera el QR con el string que sale del metodo DatosFactura, ademas de llenar el div los datos de la pelicula seleccionada
                 qrCodeImage.ImageUrl = qrCodeDataUrl;
+                RegistrarReservaYFactura(qrCodeDataUrl + DateTime.Now.ToString());
 
                 ////esto carga la cantidad de asientos seleccionados para usar el dato en una operación para conseguir el total a cobrar. 
                 //if (Session["asientosSeleccionados"] != null && Session["cantidadAsientos"] != null)
@@ -94,7 +96,7 @@ namespace Cine
             string QRString;
             try
             {
-                if ( (Session["pelicula"] != null) && (Session["UserLogin"] != null) )
+                if ((Session["pelicula"] != null) && (Session["UserLogin"] != null))
                 {
                     Ticket datosPeli = (Ticket)Session["pelicula"];
                     User datosUsuario = (User)Session["UserLogin"];
@@ -110,7 +112,7 @@ namespace Cine
                     </div>
                     ";
 
-                    QRString = datosPeli.pelicula.nombrePelicula + datosPeli.pelicula.horario.ToString()+datosUsuario.username;
+                    QRString = datosPeli.pelicula.nombrePelicula + datosPeli.pelicula.horario.ToString() + datosUsuario.username;
                 }
                 else
                 {
@@ -118,11 +120,12 @@ namespace Cine
                     mensajeTexto.InnerText = "Ocurrió un error. Será redireccionado a la pagina principal.";
                     divMensaje.Style["display"] = "block";
                     Thread.Sleep(3000);
-                    Response.Redirect("HomePage.aspx"); 
+                    Response.Redirect("HomePage.aspx");
                 }
 
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 QRString = null;
                 mensajeTexto.InnerText = "Ocurrió un error: " + ex.Message;
                 divMensaje.Style["display"] = "block";
@@ -130,7 +133,60 @@ namespace Cine
             return QRString;
         }
 
+        public int ObtenerIDUsuario()
+        {
+            try
+            {
+                // Obtener el correo electrónico del usuario desde la sesión
+                User datosUsuario = (User)Session["UserLogin"];
+                string email = datosUsuario.username;
+
+                // Crear una instancia de la capa de negocios
+                Negocios.lnCine negocio = new Negocios.lnCine();
+
+                // Llamar al método para obtener el ID del usuario
+                int idUsuario = negocio.ObtenerIDUsuario_Negocios(email);
+                return idUsuario;
+            }
+            catch (Exception ex)
+            {
+                mensajeTexto.InnerText = "Error: " + ex.Message;
+                divMensaje.Style["display"] = "block";
+                return -1; // Error al obtener el ID
+            }
+        }
+
 
         //nuevo metodo (tiene que hacer la instancia a negocios)
+        public string RegistrarReservaYFactura(string QR)
+        {
+            try
+            {
+
+                // Obtener el ID del usuario desde la sesión
+                User datosUsuario = (User)Session["UserLogin"];
+                int idUsuario = ObtenerIDUsuario();
+
+                // Obtener el ID de la película desde la sesión
+                Ticket datosPeli = (Ticket)Session["pelicula"];
+                int idPelicula = datosPeli.pelicula.id;
+
+                // Obtener el número de reserva y la cantidad de asientos desde la sesión
+                string numeroReserva = QR;
+                int cantidadAsientos = (int)Session["cantidadAsientos"];
+
+                // Crear una instancia de la capa de negocios
+                Negocios.lnCine negocio = new Negocios.lnCine();
+
+                // Llamar al método para crear la reserva y factura
+                int idFactura = negocio.CrearReservaYFactura_Negocios(idUsuario, idPelicula, numeroReserva, cantidadAsientos);
+                return "Factura creada con éxito. ID de factura: " + idFactura;
+            }
+            catch (Exception ex)
+            {
+                return "Error: " + ex.Message;
+            }
+
+        }
     }
 }
