@@ -24,15 +24,15 @@ namespace Cine
             // obtener la lista de peliculas desde la datatable
             System.Data.DataTable peliculasTable = negocio.ObtenerPeliculas_Negocios();
 
-            // Convertir la DataTable a List<Peliculas>
+            //Convertir la DataTable a List<Peliculas>
             listaPeliculas = peliculasTable.AsEnumerable().Select(row => new Peliculas
             {
-                id = row.Field<int>("id"),
-                nombrePelicula = row.Field<string>("nombrePelicula"),
-                descripcion = row.Field<string>("descripcion"),
+                id = row.Field<int>("ID_Pelicula"),
+                nombrePelicula = row.Field<string>("Nombre_Pelicula"),
+                descripcion = row.Field<string>("Descripcion"),
                 urlImagen = row.Field<string>("urlImagen"),
-                precio = row.Field<decimal>("precio"),
-                horario = row.Field<string>("horario")
+                precio = row.Field<decimal>("Precio"),
+                horario = row.Field<TimeSpan>("Horario").ToString()
             }).ToList();
 
             // lista en session
