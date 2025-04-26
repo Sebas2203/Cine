@@ -1,105 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
+﻿using Negocios;
+using System;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml.Serialization;
 
 namespace Cine
 {
     public partial class Register : System.Web.UI.Page
     {
+        private lnCine _negocios = new lnCine(); // Instancia de la capa de negocios
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            string email = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
             try
             {
-                //sino existe en la session, crea la instancia
-                if (Session["UserLogin"] != null)
+                //envia los credenciales a Negocio para registrarse en Datos. 
+                string resultado = _negocios.RegistrarUsuario_Negocio(email, password);
+
+                if (resultado.Contains("éxito") || resultado.Contains("exitosamente"))
                 {
-                    mensajeTexto.InnerText = "Su sesión ya fue iniciada. Redireccionando a la cartelera";
-                    System.Threading.Thread.Sleep(3000);
-                    Response.Redirect("HomePage.aspx");
+                    mensajeTexto.InnerText = "Usuario registrado exitosamente.";
+                    divMensaje.Style["display"] = "block";
                 }
                 else
                 {
-
-                    //objeto para sostener los datos
-                    User usuario = new User();
-                    usuario.username = txtUsername.Text;
-                    usuario.password = txtPassword.Text;
-
-                    //codigo para crear el XML
-
-                    //crear el archivo en el Server
-
-                    //configurar donde se guardará el archivo en el server
-                    string folder = "~/DataFiles/";
-
-                    string ruta = Server.MapPath(folder + "Usuarios.xml");
-
-                    if (!File.Exists(ruta)) //crea el archivo si no existe
-                    {
-                        XmlSerializer serializer = new XmlSerializer(typeof(List<User>));
-
-                        //crea una lista para sostener a los usuarios
-                        List<User> users = new List<User> { usuario };
-
-                        using (var writer = new StreamWriter(ruta))
-                        {
-                            serializer.Serialize(writer, users);
-                            mensajeTexto.InnerText = "Su usuario se ha registrado.";
-                            System.Threading.Thread.Sleep(3000);
-                            Response.Redirect("Login.aspx");
-                        }
-                    }
-                    else //agrega usuarios al archivo si el archivo existe
-                    {
-                        XmlSerializer serializer = new XmlSerializer(typeof(List<User>));
-                        List<User> users;
-
-                        using (var reader = new StreamReader(ruta))
-                        {
-                            users = (List<User>)serializer.Deserialize(reader); //se deserializa el XML y se pone en la lista
-                        }
-
-                        bool userExists = users.Exists(u => u.username == usuario.username); //variable para revisar si un usuario ya esta registrado
-
-                        if (userExists)
-                        {
-                            mensajeTexto.InnerText = "El nombre de usuario ya está registrado";
-                        }
-                        else
-                        {
-                            users.Add(usuario);
-
-                            using (var writer = new StreamWriter(ruta))
-                            {
-                                serializer.Serialize(writer, users); // se serializa la lista ya con el usuario nuevo de vuelta al XML
-                                mensajeTexto.InnerText = "Su usuario se ha registrado.";
-                                System.Threading.Thread.Sleep(3000);
-                                Response.Redirect("Login.aspx");
-                            }
-                        }
-                    }
+                    mensajeTexto.InnerText = resultado;
+                    divMensaje.Style["display"] = "block";
                 }
-
-
             }
             catch (Exception ex)
             {
-                mensajeTexto.InnerText = "Ocurrió un error: " + ex.Message;
+                mensajeTexto.InnerText = "Error al registrar usuario: " + ex.Message;
                 divMensaje.Style["display"] = "block";
             }
-
         }
-
     }
 }
