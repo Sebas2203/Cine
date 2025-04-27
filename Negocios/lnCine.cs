@@ -10,7 +10,7 @@ namespace Negocios
 
         public lnCine()
         {
-            _datos = new ldCine(); // Instancia de la capa de datos
+            _datos = new ldCine();
         }
 
         // Método para obtener las películas
@@ -28,7 +28,7 @@ namespace Negocios
         }
 
         // Método para registrar un nuevo usuario
-        public string RegistrarUsuario_Negocio(string email, string pass)
+        public string RegistrarUsuario_Negocios(string email, string pass)
         {
             try
             {

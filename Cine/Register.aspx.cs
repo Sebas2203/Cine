@@ -20,7 +20,7 @@ namespace Cine
             try
             {
                 //envia los credenciales a Negocio para registrarse en Datos. 
-                string resultado = _negocios.RegistrarUsuario_Negocio(email, password);
+                string resultado = _negocios.RegistrarUsuario_Negocios(email, password);
 
                 if (resultado.Contains("éxito") || resultado.Contains("exitosamente"))
                 {
